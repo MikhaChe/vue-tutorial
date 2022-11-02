@@ -24,17 +24,24 @@
 
             <button class="btn" @click="title = 'Другое название'">Изменить название</button> -->
 
-            <ul class="list">
-                <li class="list-item" v-for="num in 7">
-                    {{ num }}
+            <ul class="list" v-if="arr.length">
+                <li 
+                class="list-item" 
+                v-for="(num, idx) in arr"
+                @click="arr.splice(idx, 1)"
+                >
+                    <strong>{{ num }}</strong>
                 </li>
             </ul>
+            
+            <!-- <h3 v-else>Элементов нет</h3> -->
+            <h3 v-show="arr.length === 0">Элементов нет</h3>
 
-            <ul class="list">
+            <!-- <ul class="list">
                 <li class="list-item" v-for="(value, key) in person">
                     <strong>{{ key }}</strong> {{ value }}
                 </li>
-            </ul>
+            </ul> -->
 
         </div>
     </div>

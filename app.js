@@ -6,6 +6,7 @@ Vue.createApp({
             firstName: 'Mikha',
             lastName: 'Che',
             age: 44
-        }
+        },
+        arr: [14, 22, 23, 47, 5, 46]
     })
 }).mount('#app')
