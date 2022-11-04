@@ -24,16 +24,22 @@
 
             <button class="btn" @click="title = 'Другое название'">Изменить название</button> -->
 
+                <div class="form-control">
+                    <input type="text" @keyup.enter="addItem" ref="myInput">
+                </div>
+
             <ul class="list" v-if="arr.length">
                 <li 
                 class="list-item" 
-                v-for="(num, idx) in arr"
-                @click="arr.splice(idx, 1)"
+                v-for="(num, i) in arr"
+                @click="remove(i), log(num)"
+                :key="num"
                 >
-                    <strong>{{ num }}</strong>
+                    <strong>{{ num }}</strong> &nbsp
+                    <input type="text" @click.prevent.stop>
                 </li>
             </ul>
-            
+
             <!-- <h3 v-else>Элементов нет</h3> -->
             <h3 v-show="arr.length === 0">Элементов нет</h3>
 
